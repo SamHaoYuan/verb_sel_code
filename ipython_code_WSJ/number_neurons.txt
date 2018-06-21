@@ -1,0 +1,72 @@
+number of neurons: 20
+rise: 0.611916968863
+fall: 0.480335614841
+number of neurons: 40
+rise: 0.612542203326
+fall: 0.53097639251
+number of neurons: 60
+rise: 0.59797424034
+fall: 0.558840956934
+number of neurons: 80
+rise: 0.60910341378
+fall: 0.461055359903
+number of neurons: 100
+rise: 0.620295110666
+fall: 0.463112334023
+number of neurons: 120
+rise: 0.583781418032
+fall: 0.48969612253
+number of neurons: 140
+rise: 0.576966362386
+fall: 0.439727729999
+number of neurons: 160
+rise: 0.596161060398
+fall: 0.407598386194
+number of neurons: 180
+rise: 0.592284606728
+fall: 0.474422358643
+number of neurons: 200
+rise: 0.575778416906
+fall: 0.470700731354
+number of neurons: 220
+rise: 0.605914718019
+fall: 0.50357649821
+number of neurons: 240
+rise: 0.581092909841
+fall: 0.501162400034
+number of neurons: 260
+rise: 0.62410904089
+fall: 0.459394795262
+number of neurons: 280
+rise: 0.62410904089
+fall: 0.535964041462
+number of neurons: 300
+rise: 0.598536951357
+fall: 0.484812286643
+number of neurons: 320
+rise: 0.596723771414
+fall: 0.456559667558
+number of neurons: 340
+rise: 0.61416781293
+fall: 0.510412784103
+number of neurons: 360
+rise: 0.543203701388
+fall: 0.430603823663
+number of neurons: 380
+rise: 0.585969738652
+fall: 0.50614693815
+number of neurons: 400
+rise: 0.594723021133
+fall: 0.541361965338
+number of neurons: 420
+rise: 0.585594597974
+fall: 0.478771752782
+number of neurons: 440
+rise: 0.601413029886
+fall: 0.470572209357
+number of neurons: 460
+rise: 0.602038264349
+fall: 0.504374383388
+number of neurons: 480
+rise: 0.595910966612
+fall: 0.496917974415
