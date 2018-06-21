@@ -77,7 +77,7 @@ def encode(series):
 def estimate(method, direction, estimator_class, df, X, scorer, smooth_lambda=0.5):
     encoding, classes_ = encode(df.verb)
     estimator = estimator_class(classes_, smooth_lambda)
-
+    print(X)
     print('{0}, the MMR of {1} verbs'.format(method, direction))
     # print(cross_validation.cross_val_score(
     #     estimator=estimator, X=X, y=encoding, scoring=scorer, cv=5))
@@ -93,20 +93,20 @@ def estimate(method, direction, estimator_class, df, X, scorer, smooth_lambda=0.
 def run_estimators(rising_verbs, falling_verbs):
     scorer = make_scorer(label_ranking_average_precision_score)
 
-    estimate('MLP', 'rising', VerbSelectMLPMMREstimator, rising_verbs, rising_verbs.per.values.reshape(-1, 1), scorer, 0.05)
-    estimate('MLP', 'falling', VerbSelectMLPMMREstimator, falling_verbs, falling_verbs.per.values.reshape(-1, 1), scorer, 0.05)
+    #estimate('MLP', 'rising', VerbSelectMLPMMREstimator, rising_verbs, rising_verbs.per.values.reshape(-1, 1), scorer, 0.05)
+    #estimate('MLP', 'falling', VerbSelectMLPMMREstimator, falling_verbs, falling_verbs.per.values.reshape(-1, 1), scorer, 0.05)
 
     # Beta Estimator
-    estimate('beta_estimator', 'rising', VerbSelectBetaMRREstimator, rising_verbs, rising_verbs.per, scorer, 0.05)
-    estimate('beta_estimator', 'falling', VerbSelectBetaMRREstimator, falling_verbs, falling_verbs.per, scorer, 0.05)
+    #estimate('beta_estimator', 'rising', VerbSelectBetaMRREstimator, rising_verbs, rising_verbs.per, scorer, 0.05)
+    #estimate('beta_estimator', 'falling', VerbSelectBetaMRREstimator, falling_verbs, falling_verbs.per, scorer, 0.05)
 
     # Baseline Estimator
-    # estimate('baseline', 'rising', VerbSelectBaselineMRREstimator, rising_verbs, rising_verbs.per, scorer)
-    # estimate('baseline', 'falling', VerbSelectBaselineMRREstimator, falling_verbs, falling_verbs.per, scorer)
+    estimate('baseline', 'rising', VerbSelectBaselineMRREstimator, rising_verbs, rising_verbs.per, scorer)
+    estimate('baseline', 'falling', VerbSelectBaselineMRREstimator, falling_verbs, falling_verbs.per, scorer)
 
     # KDE Estimator
-    estimate('KDE', 'rising', VerbSelectKdeMRREstimator, rising_verbs, rising_verbs.per, scorer, 0.05)
-    estimate('KDE', 'falling', VerbSelectKdeMRREstimator, falling_verbs, falling_verbs.per, scorer, 0.05)
+    #estimate('KDE', 'rising', VerbSelectKdeMRREstimator, rising_verbs, rising_verbs.per, scorer, 0.05)
+    #estimate('KDE', 'falling', VerbSelectKdeMRREstimator, falling_verbs, falling_verbs.per, scorer, 0.05)
 
 
 def report(rising_verbs):
