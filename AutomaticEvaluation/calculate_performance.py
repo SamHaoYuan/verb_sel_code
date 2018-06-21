@@ -9,7 +9,7 @@ import pandas as pd
 import numpy as np
 from sklearn import cross_validation
 from sklearn.metrics import label_ranking_average_precision_score, make_scorer
-from VerbSelect import (
+from Model.VerbSelect import (
     VerbSelectBetaMRREstimator, VerbSelectKdeMRREstimator,
     VerbSelectBaselineMRREstimator, VerbSelectMLPMMREstimator
 )
@@ -146,10 +146,10 @@ def report(rising_verbs):
 
 
 def main():
-    rising_verbs, falling_verbs = preprocess('triples.csv', VERBS)
-    # rising_verbs, falling_verbs = preprocess('../data/Reuters_triples', VERBS_Reuters)
-    # rising_verbs, falling_verbs = preprocess('../data/Chinese_news_triples', VERBS_Chinese)
-    # run_estimators(rising_verbs, falling_verbs)
+    rising_verbs, falling_verbs = preprocess('../Data/bllip_triples', VERBS)
+    # rising_verbs, falling_verbs = preprocess('../Data/Reuters_triples', VERBS_Reuters)
+    # rising_verbs, falling_verbs = preprocess('../Data/Chinese_news_triples', VERBS_Chinese)
+    run_estimators(rising_verbs, falling_verbs)
     report(rising_verbs)
     # report(falling_verbs)
 

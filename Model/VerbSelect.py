@@ -171,6 +171,20 @@ class VerbSelectBaselineMRREstimator(VerbSelectBase):
         q1, q2 = self.parameters[w]
         return p if q1 <= x <= q2 else 0
 
+    def get_verbs(self, x):
+        """
+        given the percent, return all the selected verbs
+        :return:
+        """
+        verbs = []
+        for verb in self.verbs:
+            q1, q2 = self.parameters[verb]
+            if q1 <= x <= q2:
+                verbs.append(verb)
+        if not verbs:
+            verbs = self.verbs
+        return verbs
+
 
 class VerbSelectKdeMRREstimator(VerbSelectBase):
 
@@ -235,20 +249,16 @@ class VerbSelectKdeMRREstimator(VerbSelectBase):
 
 
 class VerbSelectMLPMMREstimator(VerbSelectBase):
-    # <<<<<<< HEAD
     def __init__(self, verbs, smo):
         super(VerbSelectMLPMMREstimator, self).__init__(verbs)
         self.estimator = MLPClassifier(hidden_layer_sizes=(1, 100, len(self.verbs)), max_iter=1500)
-# =======
-#    def __init__(self, verbs, smooth_lambda):
-#        super(VerbSelectMLPMMREstimator, self).__init__(verbs, smooth_lambda)
-#        # self.estimator = MLPClassifier(hidden_layer_sizes=(1, 100, 100, 100, len(self.verbs)), max_iter=1500)
-#        self.estimator = MLPClassifier(max_iter=1500)
-# >>>>>>> 5482fe48e10a729e02e93feaf7d2243563193dde
 
     def fit(self, X, y):
         return self.estimator.fit(X, y)
 
     def predict(self, X):
-        # print(self.estimator.predict_proba(X))
         return self.estimator.predict_proba(X)
+
+    def get_verbs(self, x):
+        loc = self.predict(x).argmax()
+        return self.verbs[loc]
