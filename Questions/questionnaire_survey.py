@@ -24,7 +24,7 @@ class QuestionnaireSurvey:
             print(baseline_estimator.get_verbs(per))
             if baseline_estimator.get_verbs(per):
                 # baseline_verb = random.choice(baseline_estimator.get_verbs(per))
-                baseline_verb = baseline_estimator.get_verbs(per)
+                baseline_verb = baseline_estimator.get_verbs(per)[0]
             else:
                 baseline_verb = random.choice(baseline_estimator.verbs)
             proposed_verb = proposed_estimator.p_verb(per)[0]

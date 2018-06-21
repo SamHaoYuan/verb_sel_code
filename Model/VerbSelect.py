@@ -183,7 +183,7 @@ class VerbSelectBaselineMRREstimator(VerbSelectBase):
                 verbs.append(verb)
         if not verbs:
             verbs = self.verbs
-        return choices(verbs)[0]
+        return choices(verbs)
 
 
 class VerbSelectKdeMRREstimator(VerbSelectBase):
@@ -261,7 +261,7 @@ class VerbSelectMLPMMREstimator(VerbSelectBase):
 
     def get_verbs(self, x):
         pro = self.predict(x)[0]
-        return choices(self.verbs, pro)[0]
+        return choices(self.verbs, pro)
 
     def m_verbs(self, x):
         loc = self.predict(x).argmax()
