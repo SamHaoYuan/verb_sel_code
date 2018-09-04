@@ -28,6 +28,5 @@ Zhang D, Yuan J, Wang X, et al. Probabilistic verb selection for data-to-text ge
   volume={6},
   pages={511--527},
   year={2018},
-  publisher={MIT Press}
 }
 ```
